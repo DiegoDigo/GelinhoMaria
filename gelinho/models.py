@@ -15,7 +15,7 @@ class TipoGelinho(models.Model):
 
 class SaborGelinho(models.Model):
     sabor = models.CharField('Sabor', max_length=100)
-    tipo_gelinho = models.OneToOneField(TipoGelinho)
+    tipo_gelinho = models.ForeignKey(TipoGelinho)
     qtd = models.IntegerField('Quatidade')
     valor_uni = models.DecimalField('Valor Unitario', max_digits=5, decimal_places=2)
     valor_total = models.DecimalField('Valor Total', max_digits=5, decimal_places=2)

@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     # modulos
     'rest_framework',
+    'rest_framework_swagger',
     # apps
     'gelinho',
     'vendas'
