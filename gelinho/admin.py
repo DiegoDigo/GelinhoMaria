@@ -7,10 +7,9 @@ class AdminTipoGelinho(admin.ModelAdmin):
     ordering = ['tipo']
 
 
-
 class AdminSaborGelinho(admin.ModelAdmin):
-    list_display = ['sabor','qtd','valor_uni','valor_total']
+    list_display = ['sabor', 'tipo_gelinho', 'qtd', 'valor_uni', 'valor_total']
     ordering = ['sabor']
 
-admin.site.register(TipoGelinho,AdminTipoGelinho)
-admin.site.register(SaborGelinho,AdminSaborGelinho)
+admin.site.register(TipoGelinho, AdminTipoGelinho)
+admin.site.register(SaborGelinho, AdminSaborGelinho)

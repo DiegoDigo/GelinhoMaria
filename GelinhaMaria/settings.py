@@ -40,7 +40,8 @@ INSTALLED_APPS = [
     # modulos
     'rest_framework',
     # apps
-    'gelinho'
+    'gelinho',
+    'vendas'
 
 ]
 
