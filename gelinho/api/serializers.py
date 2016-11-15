@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from gelinho.models import TipoGelinho , SaborGelinho
+from gelinho.models import TipoGelinho, SaborGelinho
 
 
 class SerializerTipoGelinho(serializers.ModelSerializer):
@@ -26,7 +26,7 @@ class SerializerSaborGelinho(serializers.ModelSerializer):
 
     class Meta:
         model = SaborGelinho
-        fields = '__all__'
+        fields = ['id', 'sabor', 'tipo_gelinho', 'qtd', 'valor_uni', 'valor_total', ]
 
     def get_tipo_gelinho(self, obj):
         return str(obj.tipo_gelinho.tipo)
