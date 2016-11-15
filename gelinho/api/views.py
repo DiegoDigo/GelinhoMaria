@@ -13,7 +13,7 @@ class ListarTipo(generics.ListAPIView):
 class SalvarTipoGelinho(generics.CreateAPIView):
     queryset = TipoGelinho.objects.all()
     serializer_class = serializers.SerializerSalvarTipoGelinho
-    #permission_classes = [IsAuthenticated, ]
+    # permission_classes = [IsAuthenticated, ]
 
 
 class ListarSabores(generics.ListAPIView):
@@ -25,4 +25,11 @@ class ListarSabores(generics.ListAPIView):
 class SalvarSaborGelinho(generics.CreateAPIView):
     queryset = SaborGelinho.objects.all()
     serializer_class = serializers.SerializerSalvarSaborGelinho
+    #permission_classes = [IsAuthenticated, ]
+
+
+class DetalheSaborGelinho(generics.RetrieveAPIView):
+    queryset = SaborGelinho.objects.all()
+    serializer_class = serializers.SerializerSaborGelinho
+    lookup_field = 'pk'
     #permission_classes = [IsAuthenticated, ]
