@@ -19,7 +19,7 @@ class SalvarTipoGelinho(generics.CreateAPIView):
 class ListarSabores(generics.ListAPIView):
     queryset = SaborGelinho.objects.all()
     serializer_class = serializers.SerializerSaborGelinho
-    # permission_classes = [IsAuthenticated, ]
+    permission_classes = [IsAuthenticated, ]
 
 
 class SalvarSaborGelinho(generics.CreateAPIView):
