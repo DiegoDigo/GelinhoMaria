@@ -30,5 +30,3 @@ class SerializerSaborGelinho(serializers.ModelSerializer):
 
     def get_tipo_gelinho(self, obj):
         return str(obj.tipo_gelinho.tipo)
-
-
