@@ -33,7 +33,8 @@ INSTALLED_APPS = [
     'corsheaders',
     # apps
     'gelinho',
-    'vendas'
+    'vendas',
+    'usuarios'
 
 ]
 

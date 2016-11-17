@@ -18,7 +18,7 @@ class SaborGelinho(models.Model):
     tipo_gelinho = models.ForeignKey(TipoGelinho , related_name = 'tipo_gelinho')
     qtd = models.IntegerField('Quatidade')
     valor_uni = models.DecimalField('Valor Unitario', max_digits=5, decimal_places=2)
-    valor_total = models.DecimalField('Valor Total', max_digits=5, decimal_places=2)
+    # valor_total = models.DecimalField('Valor Total', max_digits=5, decimal_places=2)
 
     def __str__(self):
         return self.sabor

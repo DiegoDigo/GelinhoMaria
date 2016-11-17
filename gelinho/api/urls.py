@@ -8,7 +8,7 @@ urlpatterns = [
     url(r'^tipos/$', views.ListarTipo.as_view()),
     url(r'^salvar/tipo/$', views.SalvarTipoGelinho.as_view()),
     url(r'^sabores/$', views.ListarSabores.as_view()),
-    url(r'^sabor/(?P<pk>[0-9]+)$', views.DetalheSaborGelinho.as_view()),
+    url(r'^sabor/(?P<pk>[0-9]+)/$', views.DetalheSaborGelinho.as_view()),
     url(r'^salvar/sabor/$', views.SalvarSaborGelinho.as_view()),
     url(r'^$', shema_view)
 ]
