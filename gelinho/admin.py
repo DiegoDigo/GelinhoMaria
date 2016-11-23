@@ -8,7 +8,7 @@ class AdminTipoGelinho(admin.ModelAdmin):
 
 
 class AdminSaborGelinho(admin.ModelAdmin):
-    list_display = ['sabor', 'tipo_gelinho', 'qtd', 'valor_uni']
+    list_display = ['sabor', 'tipoGelinho', 'qtd', 'valor_uni']
     ordering = ['sabor']
 
 admin.site.register(TipoGelinho, AdminTipoGelinho)

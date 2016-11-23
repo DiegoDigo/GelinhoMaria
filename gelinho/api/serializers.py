@@ -5,7 +5,7 @@ from gelinho.models import TipoGelinho, SaborGelinho
 class SerializerTipoGelinho(serializers.ModelSerializer):
     class Meta:
         model = TipoGelinho
-        fields = '__all__'
+        fields = ('id','tipo')
 
 
 class SerializerSalvarTipoGelinho(serializers.ModelSerializer):
@@ -22,13 +22,11 @@ class SerializerSalvarSaborGelinho(serializers.ModelSerializer):
 
 
 class SerializerSaborGelinho(serializers.ModelSerializer):
-    tipo_gelinho = serializers.SerializerMethodField()
-
-
+    tipoGelinho = SerializerTipoGelinho(read_only=True)
 
     class Meta:
         model = SaborGelinho
-        fields = ['id', 'sabor', 'tipo_gelinho', 'qtd', 'valor_uni', ]
+        fields = ['id', 'sabor', 'tipoGelinho', 'qtd', 'valor_uni', ]
 
-    def get_tipo_gelinho(self, obj):
-        return str(obj.tipo_gelinho.tipo)
+    # def get_tipo_gelinho(self, obj):
+    #     return str(obj.tipo_gelinho.tipo)
