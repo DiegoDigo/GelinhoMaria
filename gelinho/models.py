@@ -1,3 +1,5 @@
+from idlelib.IOBinding import blank_re
+
 from django.db import models
 
 
@@ -18,7 +20,7 @@ class SaborGelinho(models.Model):
     tipoGelinho = models.ForeignKey(TipoGelinho, related_name='tipo_gelinho')
     qtd = models.IntegerField('Quatidade')
     valor_uni = models.DecimalField('Valor Unitario', max_digits=5, decimal_places=2)
-    imagen = models.ImageField(upload_to='files')
+    imagen = models.ImageField(null=True, blank=True, upload_to='files' )
 
     def __str__(self):
         return self.sabor
