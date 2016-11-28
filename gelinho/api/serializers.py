@@ -2,11 +2,18 @@ from rest_framework import serializers
 from gelinho.models import TipoGelinho, SaborGelinho
 
 
-class SerializerTipoGelinho(serializers.ModelSerializer):
+class BaseTipoSabores(serializers.ModelSerializer):
     class Meta:
         model = TipoGelinho
         fields = "__all__"
 
+class BaseSabores(serializers.ModelSerializer):
+    class Meta:
+        model = SaborGelinho
+        fields = "__all__"
+
+class SerializerTipoGelinho(BaseTipoSabores):
+    pass
 
 class SerializerSalvarTipoGelinho(serializers.ModelSerializer):
     class Meta:
@@ -20,9 +27,13 @@ class SerializerSalvarSaborGelinho(serializers.ModelSerializer):
         fields = ['sabor', 'tipo_gelinho', 'qtd', 'valor_uni', ]
 
 
-class SerializerSaborGelinho(serializers.ModelSerializer):
+class SerializerSaborGelinho(BaseSabores):
     tipoGelinho = SerializerTipoGelinho(read_only=True)
+    imagem = serializers.SerializerMethodField()
 
-    class Meta:
-        model = SaborGelinho
-        fields = ['id', 'sabor', 'tipoGelinho', 'qtd', 'valor_uni', ]
+    def get_imagem(self, obj):
+        try:
+            imagem = obj.imagem.url
+        except:
+            imagem = None
+        return imagem

@@ -18,6 +18,7 @@ class SaborGelinho(models.Model):
     tipoGelinho = models.ForeignKey(TipoGelinho, related_name='tipo_gelinho')
     qtd = models.IntegerField('Quatidade')
     valor_uni = models.DecimalField('Valor Unitario', max_digits=5, decimal_places=2)
+    imagen = models.ImageField(upload_to='files')
 
     def __str__(self):
         return self.sabor
