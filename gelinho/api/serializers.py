@@ -29,11 +29,3 @@ class SerializerSalvarSaborGelinho(serializers.ModelSerializer):
 
 class SerializerSaborGelinho(BaseSabores):
     tipoGelinho = SerializerTipoGelinho(read_only=True)
-    imagem = serializers.SerializerMethodField()
-
-    def get_imagem(self, obj):
-        try:
-            imagem = obj.imagem.url
-        except:
-            imagem = None
-        return imagem
